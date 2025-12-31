@@ -1,0 +1,56 @@
+{
+  "name": "mfe-template",
+  "version": "0.0.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "ng": "ng",
+    "start": "dotenv -e .env -- cross-var ng serve --port %HOST_PORT%",
+    "build": "ng build",
+    "build:prod": "dotenv -e .env-prod -- cross-var ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
+    "prepare": "husky install",
+    "precommit:validate": "pnpm pretty-quick --staged"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-architects/module-federation": "^20.0.0",
+    "@angular-devkit/build-angular": "^20.3.13",
+    "@angular/build": "^20.3.13",
+    "@angular/cli": "^20.3.13",
+    "@angular/compiler-cli": "^20.3.0",
+    "@types/jasmine": "~5.1.0",
+    "concurrently": "^9.2.1",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^11.0.0",
+    "husky": "^9.1.7",
+    "jasmine-core": "~5.9.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ngx-build-plus": "^20.0.0",
+    "prettier": "^3.7.4",
+    "pretty-quick": "^4.2.2",
+    "typescript": "~5.9.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.27.0"
+}
